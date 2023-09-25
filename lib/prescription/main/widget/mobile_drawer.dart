@@ -23,7 +23,7 @@ class MobileDrawer extends StatelessWidget {
                     child: Text(
               "Sena ÇELİK",
               style: getRegularStyle(
-                  fontSize: 24.sp, color: ColorManager.instance.black),
+                  fontSize: 24, color: ColorManager.instance.black),
             ))),
             ...NavBarUtils.names.asMap().entries.map(
                   (e) => ListTile(
