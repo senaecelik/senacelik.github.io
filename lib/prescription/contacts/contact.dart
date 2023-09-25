@@ -5,6 +5,10 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(child: Text("Contact"),);
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height:  size.height*1025,
+      child: Text("Contact"),
+    );
   }
 }

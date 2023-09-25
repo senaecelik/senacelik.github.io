@@ -10,7 +10,7 @@ class NavbarDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.transparent,
+      color: Colors.white70,
       padding: EdgeInsets.symmetric(horizontal: 120, vertical: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -21,9 +21,6 @@ class NavbarDesktop extends StatelessWidget {
                   index: e.key,
                 ),
               ),
-          SizedBox(
-            width: 16,
-          ),
           OutlinedButton(
               onPressed: () {
                 html.window.open(

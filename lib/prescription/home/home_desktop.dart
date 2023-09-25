@@ -1,8 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:senaecelik/animation/entrance_fader.dart';
-import 'package:senaecelik/app_dimension.dart';
 import 'package:senaecelik/resources/color_manager.dart';
 import 'package:senaecelik/resources/styles_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
@@ -20,7 +18,7 @@ class HomeDesktop extends StatelessWidget {
 
     return Container(
       height: size.height * 1.025,
-      padding: EdgeInsets.all(AppPadding.p80),
+      padding: EdgeInsets.all(AppPadding.p100),
       child: Stack(
         children: [
           Positioned(
@@ -43,8 +41,8 @@ class HomeDesktop extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.fromLTRB(
-              AppDimensions.normalize(30),
-              AppDimensions.normalize(80),
+              AppSizeHeight.s32,
+              AppSizeHeight.s32,
               0,
               0,
             ),
@@ -63,7 +61,7 @@ class HomeDesktop extends StatelessWidget {
                       duration: const Duration(milliseconds: 800),
                       child: Image.asset(
                         StaticUtils.hi,
-                        height: AppDimensions.normalize(32),
+                        height: AppSizeHeight.s32,
                       ),
                     ),
                   ],
@@ -77,9 +75,9 @@ class HomeDesktop extends StatelessWidget {
                 Text("ÇELİK",
                     style: getBoldStyle(
                             fontSize: 72, color: ColorManager.instance.black)
-                        .copyWith(height: 1)),
+                        .copyWith(height: 0.5)),
                 SizedBox(
-                  height: AppSizeHeight.s24,
+                  height: AppSizeHeight.s40,
                 ),
                 EntranceFader(
                   offset: const Offset(-10, 0),
@@ -98,16 +96,16 @@ class HomeDesktop extends StatelessWidget {
                               textStyle: getMediumStyle(
                                   fontSize: 24,
                                   color: ColorManager.instance.black)),
-                          TyperAnimatedText(' UI/UX Enthusiast',
+                          TyperAnimatedText(' Mathematician',
                               speed: const Duration(milliseconds: 50),
                               textStyle: getMediumStyle(
                                   fontSize: 24,
                                   color: ColorManager.instance.black)),
-                          TyperAnimatedText(' A friend :)',
-                              speed: const Duration(milliseconds: 50),
-                              textStyle: getMediumStyle(
-                                  fontSize: 24,
-                                  color: ColorManager.instance.black)),
+                          // TyperAnimatedText(' ',
+                          //     speed: const Duration(milliseconds: 50),
+                          //     textStyle: getMediumStyle(
+                          //         fontSize: 24,
+                          //         color: ColorManager.instance.black)),
                         ],
                         isRepeatingAnimation: true,
                         repeatForever: true,
@@ -142,11 +140,11 @@ class SocialLinks extends StatelessWidget {
           .map(
             (e) => IconButton(
               highlightColor: Colors.green.shade300,
-              splashRadius: AppDimensions.normalize(1),
+              splashRadius: AppSizeHeight.s1,
               icon: Image.network(
                 e.value,
                 color: Colors.black,
-                height: 40,
+                height: Responsive.isDesktop(context) ? 40 : 20,
               ),
               iconSize: 25,
               onPressed: () =>

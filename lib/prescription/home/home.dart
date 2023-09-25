@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:senaecelik/prescription/home/home_desktop.dart';
+import 'package:senaecelik/prescription/home/home_mobil.dart';
 import 'package:senaecelik/responsive/responsive.dart';
 
 class Home extends StatefulWidget {
@@ -12,8 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Responsive(
-        mobile: HomeDesktop(), tablet: HomeDesktop(), desktop: HomeDesktop());
+        mobile: HomeMobile(), tablet: HomeMobile(), desktop: HomeDesktop());
   }
 }

@@ -25,6 +25,8 @@ class AppPadding {
   static double p30 = 30.0.sm;
   static double p40 = 40.0.sm;
   static double p80 = 80.0.sm;
+  static double p100 = 100.0.sm;
+
 }
 
 class AppSizeHeight {

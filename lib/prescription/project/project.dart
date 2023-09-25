@@ -5,7 +5,9 @@ class Project extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
+      height: size.height * 1025,
       child: Text("Project"),
     );
   }

@@ -1,5 +1,5 @@
 class StaticUtils {
-  static String hi = "assets/hi.gif";
+  static String hi = "assets/images/hi.gif";
   static String resume =
       "https://drive.google.com/file/d/1qEk3tuHX9dc3qAf7_wsx7E-f5iE3Kidx/view?usp=drive_link";
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:senaecelik/app_dimension.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
@@ -8,6 +7,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      height:  size.height*1025,
       child: Text("About"),
     );
   }

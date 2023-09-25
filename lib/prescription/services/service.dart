@@ -5,8 +5,10 @@ class Service extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      child: Text("Service"),
+      height: size.height * 1025,
+      child: Text("Services"),
     );
   }
 }

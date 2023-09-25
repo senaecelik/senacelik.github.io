@@ -21,8 +21,9 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Sena Ercihan ÇELİK',
+          title: 'Sena ÇELİK',
           darkTheme: ThemeData(
+   
             useMaterial3: true,
             colorSchemeSeed: Colors.green,
           ),
