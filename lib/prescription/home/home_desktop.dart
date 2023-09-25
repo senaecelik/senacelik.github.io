@@ -17,7 +17,7 @@ class HomeDesktop extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 1.025,
+      height: size.height * 1.000,
       padding: EdgeInsets.all(AppPadding.p100),
       child: Stack(
         children: [

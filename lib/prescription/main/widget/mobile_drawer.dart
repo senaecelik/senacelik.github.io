@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:senaecelik/provider/scroll_provider.dart';
 import 'package:senaecelik/resources/color_manager.dart';
@@ -42,7 +41,7 @@ class MobileDrawer extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      scrollProvider.scroll(e.key);
+                      scrollProvider.scrollMobile(e.key);
                     },
                   ),
                 )

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:senaecelik/prescription/about/about_desktop.dart';
+import 'package:senaecelik/prescription/about/about_mobile.dart';
+import 'package:senaecelik/responsive/responsive.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      height:  size.height*1025,
-      child: Text("About"),
-    );
+    return Responsive(
+        mobile: AboutMobile(), tablet: AboutMobile(), desktop: AboutDesktop());
   }
 }
