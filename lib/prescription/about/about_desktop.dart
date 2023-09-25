@@ -8,7 +8,10 @@ class AboutDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Container(
+      height: size.height * 0.500,
       padding: EdgeInsets.symmetric(horizontal: AppPadding.p100),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

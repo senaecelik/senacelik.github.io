@@ -9,9 +9,9 @@ class ScrollProvider extends ChangeNotifier {
     double offset = index == 1
         ? 750
         : index == 2
-            ? 400
+            ? 800
             : index == 3
-                ? 220
+                ? 900
                 : 245;
     controller.animateTo(
       offset * index.toDouble(),
@@ -24,7 +24,7 @@ class ScrollProvider extends ChangeNotifier {
     double offset = index == 1
         ? 290
         : index == 2
-            ? 360
+            ? 450
             : index == 3
                 ? 300
                 : 310;

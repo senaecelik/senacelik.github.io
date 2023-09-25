@@ -1,5 +1,7 @@
 class StaticUtils {
   static String hi = "assets/images/hi.gif";
+  static String github = "https://github.com/senaecelik";
+
   static String resume =
       "https://drive.google.com/file/d/1qEk3tuHX9dc3qAf7_wsx7E-f5iE3Kidx/view?usp=drive_link";
 
@@ -16,4 +18,15 @@ class StaticUtils {
     "https://github.com/senaecelik",
     "https://medium.com/@senaecelik"
   ];
+
+  // services
+  static const String uiux =
+      "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png";
+
+  static const String blog =
+      "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png";
+  static const String appDev =
+      "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png";
+  static const String rapid =
+      "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png";
 }

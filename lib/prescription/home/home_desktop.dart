@@ -48,6 +48,7 @@ class HomeDesktop extends StatelessWidget {
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -75,7 +76,7 @@ class HomeDesktop extends StatelessWidget {
                 Text("ÇELİK",
                     style: getBoldStyle(
                             fontSize: 72, color: ColorManager.instance.black)
-                        .copyWith(height: 0.5)),
+                        .copyWith(height: 0.8)),
                 SizedBox(
                   height: AppSizeHeight.s40,
                 ),
@@ -116,7 +117,6 @@ class HomeDesktop extends StatelessWidget {
                 SizedBox(
                   height: AppSizeHeight.s24,
                 ),
-                SocialLinks()
               ],
             ),
           ),
@@ -132,27 +132,37 @@ class SocialLinks extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return OverflowBar(
-      spacing: 10,
-      children: StaticUtils.socialIconURL
-          .asMap()
-          .entries
-          .map(
-            (e) => IconButton(
-              highlightColor: Colors.green.shade300,
-              splashRadius: AppSizeHeight.s1,
-              icon: Image.network(
-                e.value,
-                color: Colors.black,
-                height: Responsive.isDesktop(context) ? 40 : 20,
-              ),
-              iconSize: 25,
-              onPressed: () =>
-                  html.window.open(StaticUtils.socialLinks[e.key], ""),
-              hoverColor: Colors.green.shade100,
-            ),
-          )
-          .toList(),
+    return Column(
+      children: [
+        Container(
+          color: Colors.green.shade200,
+          width: 3,
+          height: AppSizeHeight.s240,
+        ),
+        Wrap(
+          spacing: 20,
+          direction: Axis.vertical,
+          children: StaticUtils.socialIconURL
+              .asMap()
+              .entries
+              .map(
+                (e) => IconButton(
+                  highlightColor: Colors.green.shade300,
+                  splashRadius: AppSizeHeight.s1,
+                  icon: Image.network(
+                    e.value,
+                    color: Colors.black,
+                    height: Responsive.isDesktop(context) ? 40 : 20,
+                  ),
+                  iconSize: 25,
+                  onPressed: () =>
+                      html.window.open(StaticUtils.socialLinks[e.key], ""),
+                  hoverColor: Colors.green.shade100,
+                ),
+              )
+              .toList(),
+        ),
+      ],
     );
   }
 }

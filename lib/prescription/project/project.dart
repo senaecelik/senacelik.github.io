@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:senaecelik/prescription/project/project_desktop.dart';
+import 'package:senaecelik/responsive/responsive.dart';
 
 class Project extends StatelessWidget {
   const Project({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height * 1025,
-      child: Text("Project"),
-    );
+    return const Responsive(
+        mobile: SizedBox.shrink(),
+        tablet: SizedBox.shrink(),
+        desktop: ProjectDesktop());
   }
 }
