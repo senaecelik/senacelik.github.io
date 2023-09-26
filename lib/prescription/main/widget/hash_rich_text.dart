@@ -15,11 +15,11 @@ class HashRichText extends StatelessWidget {
         text: '# ',
         style: Theme.of(context)
             .textTheme
-            .headlineSmall!
+            .titleLarge!
             .copyWith(color: Theme.of(context).colorScheme.primary),
         children: <TextSpan>[
-          TextSpan(
-              text: label, style: Theme.of(context).textTheme.headlineSmall),
+          TextSpan(text: label, style: Theme.of(context).textTheme.titleLarge),
+         
         ],
       ),
     );

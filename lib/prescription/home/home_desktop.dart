@@ -6,7 +6,7 @@ import 'package:senaecelik/animation/entrance_fader.dart';
 import 'package:senaecelik/resources/font_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/utils/static_util.dart';
-import 'package:senaecelik/widget/button/resume_button.dart';
+import 'package:senaecelik/widget/button/social_link.dart';
 
 class HomeDesktop extends StatelessWidget {
   const HomeDesktop({super.key});
@@ -56,7 +56,7 @@ class HomeDesktop extends StatelessWidget {
                       'WELCOME TO MY PORTFOLIO! ',
                       style: Theme.of(context)
                           .textTheme
-                          .headlineLarge!
+                          .headlineSmall!
                           .copyWith(fontWeight: FontWeightManager.light),
                     ),
                     EntranceFader(
@@ -95,8 +95,9 @@ class HomeDesktop extends StatelessWidget {
                   duration: const Duration(milliseconds: 800),
                   child: Row(
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.play_arrow_outlined,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                       AnimatedTextKit(
                         animatedTexts: [
@@ -122,7 +123,7 @@ class HomeDesktop extends StatelessWidget {
                 SizedBox(
                   height: AppSizeHeight.s24,
                 ),
-                const ResumeButton(),
+                const SocialLinks(),
               ],
             ),
           ),
@@ -131,4 +132,3 @@ class HomeDesktop extends StatelessWidget {
     );
   }
 }
-

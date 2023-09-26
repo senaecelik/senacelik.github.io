@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:senaecelik/prescription/main/widget/dark_light_button.dart';
-import 'package:senaecelik/widget/button/social_link.dart';
 import 'package:senaecelik/prescription/main/widget/mobile_drawer.dart';
 import 'package:senaecelik/prescription/main/widget/navbar_desktop.dart';
 import 'package:senaecelik/provider/scroll_provider.dart';
@@ -33,19 +32,19 @@ class MainSection extends StatelessWidget {
             Responsive.isDesktop(context)
                 ? const NavbarDesktop()
                 : const SizedBox.shrink(),
-            Responsive.isDesktop(context)
-                ? const Positioned(left: 20, top: 0, child: SocialLinks())
-                : const SizedBox.shrink(),
+            // Responsive.isDesktop(context)
+            //     ? const Positioned(left: 20, top: 0, child: SocialLinks())
+            //     : const SizedBox.shrink(),
             Responsive.isDesktop(context)
                 ? Positioned(
-                    right: 20,
+                    right: 30,
                     top: 0,
                     child: Column(
                       children: [
                         Container(
                           color: Theme.of(context).colorScheme.onBackground,
                           width: 3,
-                          height: 120,
+                          height: 170,
                         ),
                         const DarkLightButton(),
                       ],

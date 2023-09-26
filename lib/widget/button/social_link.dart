@@ -17,14 +17,13 @@ class SocialLinks extends StatelessWidget {
     final appProvider = Provider.of<AppProvider>(context);
     return Column(
       children: [
-        Container(
-          color: Theme.of(context).colorScheme.onBackground,
-          width: 3,
-          height: 200,
-        ),
-        Wrap(
+        // Container(
+        //   color: Theme.of(context).colorScheme.onBackground,
+        //   width: 3,
+        //   height: 200,
+        // ),
+        OverflowBar(
           spacing: 20,
-          direction: Axis.vertical,
           children: StaticUtils.socialIconURL
               .asMap()
               .entries

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:senaecelik/utils/navbar_util.dart';
 import 'package:senaecelik/widget/button/navbar_action_button.dart';
+import 'package:senaecelik/widget/button/resume_button.dart';
 
 class NavbarDesktop extends StatefulWidget {
   const NavbarDesktop({super.key});
@@ -25,6 +26,7 @@ class _NavbarDesktopState extends State<NavbarDesktop> {
                   index: e.key,
                 ),
               ),
+          const ResumeButton()
         ],
       ),
     );

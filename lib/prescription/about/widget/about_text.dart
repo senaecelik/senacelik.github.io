@@ -15,7 +15,7 @@ class AboutText extends StatelessWidget {
       children: [
         Text(
           "I'm Sena, a Flutter Developer",
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         SizedBox(
           height: AppSizeHeight.s24,

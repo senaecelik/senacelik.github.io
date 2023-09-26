@@ -14,6 +14,7 @@ class AboutDesktop extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
+      height: size.height * 0.5,
       padding: EdgeInsets.symmetric(horizontal: AppPadding.p100),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

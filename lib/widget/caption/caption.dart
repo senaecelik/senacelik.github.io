@@ -18,12 +18,12 @@ class Caption extends StatelessWidget {
             text: '# ',
             style: Theme.of(context)
                 .textTheme
-                .displaySmall!
+                .headlineSmall!
                 .copyWith(color: Theme.of(context).colorScheme.primary),
             children: <TextSpan>[
               TextSpan(
                   text: label,
-                  style: Theme.of(context).textTheme.displaySmall),
+                  style: Theme.of(context).textTheme.headlineSmall),
             ],
           ),
         ),
