@@ -12,7 +12,7 @@ class AboutMobile extends StatelessWidget {
       padding: EdgeInsets.all(AppPadding.p20),
       child: Column(
         children: [
-          const Caption(label: "ABOUT"),
+          const Caption(label: "About Me"),
           SizedBox(
             height: AppSizeHeight.s12,
           ),

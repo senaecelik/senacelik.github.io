@@ -11,29 +11,24 @@ class Caption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        RichText(
-          text: TextSpan(
-            text: '# ',
-            style: Theme.of(context)
-                .textTheme
-                .headlineLarge!
-                .copyWith(color: Theme.of(context).colorScheme.primary),
-            children: <TextSpan>[
-              TextSpan(
-                  text: label,
-                  style: Theme.of(context).textTheme.headlineLarge),
-            ],
+        Container(
+          child: RichText(
+            text: TextSpan(
+              text: '# ',
+              style: Theme.of(context)
+                  .textTheme
+                  .displaySmall!
+                  .copyWith(color: Theme.of(context).colorScheme.primary),
+              children: <TextSpan>[
+                TextSpan(
+                    text: label,
+                    style: Theme.of(context).textTheme.displaySmall),
+              ],
+            ),
           ),
         ),
-        const Expanded(
-          child: Divider(
-            height: 10,
-            indent: 30,
-            endIndent: 30,
-            color: Colors.black,
-          ),
-        )
       ],
     );
   }

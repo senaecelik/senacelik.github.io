@@ -18,7 +18,7 @@ class ServicesDesktop extends StatelessWidget {
       padding: EdgeInsets.all(AppPadding.p100),
       child: Column(
         children: [
-          Caption(label: "SERVICES"),
+          Caption(label: "Services"),
           SizedBox(
             height: AppSizeHeight.s16,
           ),

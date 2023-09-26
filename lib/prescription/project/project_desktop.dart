@@ -14,7 +14,7 @@ class ProjectDesktop extends StatelessWidget {
       padding: EdgeInsets.all(AppPadding.p100),
       child: Column(
         children: [
-          const Caption(label: "PROJECT"),
+          const Caption(label: "Project"),
           // const CustomSectionSubHeading(
           //   text: "Here are few samples of my previous work :)\n\n",
           // ),

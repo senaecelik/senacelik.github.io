@@ -21,7 +21,7 @@ class NavbarActionButton extends StatelessWidget {
       padding: EdgeInsets.only(right: AppPadding.p12),
       child: TextButton(
           onPressed: () {
-            scrollProvider.scroll(index);
+            scrollProvider.scroll(index, context);
           },
           child: HashRichText(label: label)),
     );
