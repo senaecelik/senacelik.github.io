@@ -13,20 +13,18 @@ class Caption extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          child: RichText(
-            text: TextSpan(
-              text: '# ',
-              style: Theme.of(context)
-                  .textTheme
-                  .displaySmall!
-                  .copyWith(color: Theme.of(context).colorScheme.primary),
-              children: <TextSpan>[
-                TextSpan(
-                    text: label,
-                    style: Theme.of(context).textTheme.displaySmall),
-              ],
-            ),
+        RichText(
+          text: TextSpan(
+            text: '# ',
+            style: Theme.of(context)
+                .textTheme
+                .displaySmall!
+                .copyWith(color: Theme.of(context).colorScheme.primary),
+            children: <TextSpan>[
+              TextSpan(
+                  text: label,
+                  style: Theme.of(context).textTheme.displaySmall),
+            ],
           ),
         ),
       ],

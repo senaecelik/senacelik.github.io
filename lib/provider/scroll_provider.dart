@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:senaecelik/responsive/responsive.dart';
 
 class ScrollProvider extends ChangeNotifier {
   final scrollController = ScrollController();
 
   ScrollController get controller => scrollController;
 
-  scroll(int index, BuildContext context) {
+  scroll(int index) {
     double offset = index == 1
         ? 600
         : index == 2
