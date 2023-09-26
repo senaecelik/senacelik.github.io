@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/utils/static_util.dart';
@@ -50,33 +52,37 @@ class ProjectCardState extends State<ProjectCard> {
         }
       },
       child: Card(
-        margin: EdgeInsets.all(AppMargin.m20),
+        margin: EdgeInsets.all(AppMargin.m40),
         child: Container(
-          margin: EdgeInsets.all(AppMargin.m50),
+          margin: EdgeInsets.all(AppMargin.m40),
           width: MediaQuery.of(context).size.width / 6,
-          height: MediaQuery.of(context).size.width * .15,
+          height: MediaQuery.of(context).size.height * .3,
           child: Stack(
             fit: StackFit.expand,
             children: [
               isHover == true
-                  ? SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
+                  ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Text(
                             widget.projectTitle,
-                            style: Theme.of(context).textTheme.headlineLarge,
+                            style: Theme.of(context).textTheme.headlineMedium,
                             textAlign: TextAlign.center,
                           ),
-                          Text(
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Text(
                             widget.projectDescription,
-                            style: Theme.of(context).textTheme.headlineSmall,
+                            style: Theme.of(context).textTheme.labelLarge,
                             textAlign: TextAlign.center,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
                   : Container(),
               AnimatedOpacity(
@@ -88,14 +94,16 @@ class ProjectCardState extends State<ProjectCard> {
                       ? Image.network(
                           widget.banner!,
                           errorBuilder: (context, error, stackTrace) {
-                            return Icon(
+                            return const Icon(
                               Icons.image_not_supported_outlined,
                             );
                           },
                         )
-                      : Container(),
+                      : Icon(
+                          Icons.image_not_supported_outlined,
+                        ),
                 ),
-              ),
+              )
             ],
           ),
         ),

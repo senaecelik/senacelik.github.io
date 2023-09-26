@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Responsive(
+    return const Responsive(
         mobile: HomeMobile(), tablet: HomeMobile(), desktop: HomeDesktop());
   }
 }

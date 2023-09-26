@@ -5,7 +5,9 @@ import 'package:senaecelik/resources/color_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/responsive/responsive.dart';
 import 'package:senaecelik/utils/static_util.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
+
 class SocialLinks extends StatelessWidget {
   const SocialLinks({
     Key? key,
@@ -16,7 +18,7 @@ class SocialLinks extends StatelessWidget {
     return Column(
       children: [
         Container(
-          color: Colors.green.shade200,
+          color: Theme.of(context).colorScheme.onBackground,
           width: 3,
           height: 200,
         ),
@@ -28,7 +30,8 @@ class SocialLinks extends StatelessWidget {
               .entries
               .map(
                 (e) => IconButton(
-                  highlightColor: Colors.green.shade300,
+                  highlightColor:
+                      Theme.of(context).colorScheme.secondaryContainer,
                   splashRadius: AppSizeHeight.s1,
                   icon: Image.network(
                     e.value,
@@ -40,9 +43,7 @@ class SocialLinks extends StatelessWidget {
                   iconSize: 25,
                   onPressed: () =>
                       html.window.open(StaticUtils.socialLinks[e.key], ""),
-                  hoverColor: appProvider.isDark
-                      ? Colors.green.shade600
-                      : Colors.green.shade100,
+                  hoverColor: Theme.of(context).colorScheme.secondaryContainer,
                 ),
               )
               .toList(),

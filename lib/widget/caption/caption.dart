@@ -12,20 +12,18 @@ class Caption extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          child: RichText(
-            text: TextSpan(
-              text: '# ',
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineLarge!
-                  .copyWith(color: Colors.green.shade200),
-              children: <TextSpan>[
-                TextSpan(
-                    text: label,
-                    style: Theme.of(context).textTheme.headlineLarge),
-              ],
-            ),
+        RichText(
+          text: TextSpan(
+            text: '# ',
+            style: Theme.of(context)
+                .textTheme
+                .headlineLarge!
+                .copyWith(color: Theme.of(context).colorScheme.primary),
+            children: <TextSpan>[
+              TextSpan(
+                  text: label,
+                  style: Theme.of(context).textTheme.headlineLarge),
+            ],
           ),
         ),
         const Expanded(

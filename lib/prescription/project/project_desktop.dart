@@ -14,7 +14,7 @@ class ProjectDesktop extends StatelessWidget {
       padding: EdgeInsets.all(AppPadding.p100),
       child: Column(
         children: [
-          Caption(label: "PROJECT"),
+          const Caption(label: "PROJECT"),
           // const CustomSectionSubHeading(
           //   text: "Here are few samples of my previous work :)\n\n",
           // ),
@@ -39,7 +39,7 @@ class ProjectDesktop extends StatelessWidget {
 
           OutlinedButton(
             onPressed: () => StaticUtils.openURL(StaticUtils.github),
-            child: Text(
+            child: const Text(
               'See More',
             ),
           )

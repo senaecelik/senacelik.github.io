@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HashRichText extends StatelessWidget {
@@ -16,11 +15,11 @@ class HashRichText extends StatelessWidget {
         text: '# ',
         style: Theme.of(context)
             .textTheme
-            .titleLarge!
-            .copyWith(color: Colors.green.shade200),
+            .headlineSmall!
+            .copyWith(color: Theme.of(context).colorScheme.primary),
         children: <TextSpan>[
           TextSpan(
-              text: label, style: Theme.of(context).textTheme.titleLarge),
+              text: label, style: Theme.of(context).textTheme.headlineSmall),
         ],
       ),
     );

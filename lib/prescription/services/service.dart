@@ -7,8 +7,8 @@ class Service extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Responsive(
+   
+    return const Responsive(
         mobile: ServicesDesktop(),
         tablet: ServicesDesktop(),
         desktop: ServicesDesktop());

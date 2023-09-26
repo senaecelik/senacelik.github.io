@@ -52,14 +52,14 @@ class ServiceCardState extends State<ServiceCard> {
           height: MediaQuery.of(context).size.height / 3,
           padding: EdgeInsets.all(AppPadding.p30),
           decoration: BoxDecoration(
-            color: Color(0xffEEEEEE),
+            color: const Color(0xffEEEEEE),
             borderRadius: BorderRadius.circular(15),
             boxShadow: isHover
                 ? [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Colors.black12,
                       blurRadius: 10.0,
-                      offset: const Offset(0.0, 0.0),
+                      offset: Offset(0.0, 0.0),
                     )
                   ]
                 : null,
@@ -78,10 +78,10 @@ class ServiceCardState extends State<ServiceCard> {
             borderRadius: BorderRadius.circular(15),
             boxShadow: isHover
                 ? [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Colors.black12,
                       blurRadius: 10.0,
-                      offset: const Offset(0.0, 0.0),
+                      offset: Offset(0.0, 0.0),
                     )
                   ]
                 : null,

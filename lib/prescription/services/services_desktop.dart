@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:senaecelik/prescription/services/widget/service_card.dart';
 import 'package:senaecelik/resources/values_manager.dart';

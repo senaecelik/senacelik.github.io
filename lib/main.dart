@@ -57,7 +57,7 @@ class _AppState extends State<App> {
         theme: TAppTheme.lightTheme,
         darkTheme: TAppTheme.darkTheme,
         themeMode: widget.provider.themeMode,
-        home: MainSection(),
+        home: const MainSection(),
       ),
     );
   }

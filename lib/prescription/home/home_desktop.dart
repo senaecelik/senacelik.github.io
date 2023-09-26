@@ -1,9 +1,12 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:senaecelik/animation/entrance_fader.dart';
+import 'package:senaecelik/resources/font_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/utils/static_util.dart';
-import 'dart:html' as html;
+import 'package:senaecelik/widget/button/resume_button.dart';
 
 class HomeDesktop extends StatelessWidget {
   const HomeDesktop({super.key});
@@ -51,7 +54,10 @@ class HomeDesktop extends StatelessWidget {
                   children: [
                     Text(
                       'WELCOME TO MY PORTFOLIO! ',
-                      style: Theme.of(context).textTheme.headlineLarge,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineLarge!
+                          .copyWith(fontWeight: FontWeightManager.light),
                     ),
                     EntranceFader(
                       offset: const Offset(0, 0),
@@ -69,11 +75,16 @@ class HomeDesktop extends StatelessWidget {
                 ),
                 Text(
                   "Sena",
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                      fontSize: 66, fontWeight: FontWeightManager.regular),
                 ),
                 Text(
                   "ÇELİK",
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                        fontSize: 82,
+                        fontWeight: FontWeightManager.semiBold,
+                        height: 0.8,
+                      ),
                 ),
                 SizedBox(
                   height: AppSizeHeight.s40,
@@ -84,9 +95,8 @@ class HomeDesktop extends StatelessWidget {
                   duration: const Duration(milliseconds: 800),
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.play_arrow_outlined,
-                        color: Colors.green.shade200,
                       ),
                       AnimatedTextKit(
                         animatedTexts: [
@@ -94,20 +104,14 @@ class HomeDesktop extends StatelessWidget {
                             ' Flutter Developer',
                             speed: const Duration(milliseconds: 50),
                             textStyle:
-                                Theme.of(context).textTheme.headlineSmall,
+                                Theme.of(context).textTheme.headlineMedium,
                           ),
                           TyperAnimatedText(
                             ' Mathematician',
                             speed: const Duration(milliseconds: 50),
                             textStyle:
-                                Theme.of(context).textTheme.headlineSmall,
+                                Theme.of(context).textTheme.headlineMedium,
                           ),
-
-                          // TyperAnimatedText(' ',
-                          //     speed: const Duration(milliseconds: 50),
-                          //     textStyle: getMediumStyle(
-                          //         fontSize: 24,
-                          //         color: ColorManager.instance.black)),
                         ],
                         isRepeatingAnimation: true,
                         repeatForever: true,
@@ -118,7 +122,7 @@ class HomeDesktop extends StatelessWidget {
                 SizedBox(
                   height: AppSizeHeight.s24,
                 ),
-                ResumeButton(),
+                const ResumeButton(),
               ],
             ),
           ),
@@ -128,20 +132,3 @@ class HomeDesktop extends StatelessWidget {
   }
 }
 
-class ResumeButton extends StatelessWidget {
-  const ResumeButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-        onPressed: () {
-          html.window.open(
-            StaticUtils.resume,
-            "pdf",
-          );
-        },
-        child: Text("RESUME"));
-  }
-}

@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:senaecelik/prescription/about/widget/about_text.dart';
 import 'package:senaecelik/resources/values_manager.dart';
@@ -17,7 +19,7 @@ class AboutDesktop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Caption(label: "ABOUT"),
+          const Caption(label: "ABOUT"),
           SizedBox(
             height: AppSizeHeight.s16,
           ),
@@ -30,7 +32,7 @@ class AboutDesktop extends StatelessWidget {
                   width: 200,
                 ),
               ),
-              Expanded(
+              const Expanded(
                 flex: 3,
                 child: AboutText(),
               )
