@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:senaecelik/prescription/home/home_desktop.dart';
 import 'package:senaecelik/prescription/project/project_card.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/utils/project_util.dart';
@@ -39,7 +38,7 @@ class ProjectDesktop extends StatelessWidget {
           ),
 
           OutlinedButton(
-            onPressed: () => openURL(StaticUtils.github),
+            onPressed: () => StaticUtils.openURL(StaticUtils.github),
             child: Text(
               'See More',
             ),

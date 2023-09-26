@@ -43,6 +43,7 @@ dependencies:
   line_icons: ^2.0.3
   flip_card: ^0.7.0
   font_awesome_flutter: ^10.5.0
+  lite_rolling_switch: ^1.0.1
 
 dev_dependencies:
   flutter_test:

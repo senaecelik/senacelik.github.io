@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:senaecelik/prescription/home/home_desktop.dart';
-import 'package:senaecelik/resources/color_manager.dart';
-import 'package:senaecelik/resources/styles_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
+import 'package:senaecelik/utils/static_util.dart';
 
 class ProjectCard extends StatefulWidget {
   final String? banner;
@@ -31,14 +29,13 @@ class ProjectCardState extends State<ProjectCard> {
 
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: widget.projectLink == null
           ? () {}
-          : () => openURL(
+          : () => StaticUtils.openURL(
                 widget.projectLink!,
               ),
       onHover: (isHovering) {
@@ -70,16 +67,12 @@ class ProjectCardState extends State<ProjectCard> {
                         children: [
                           Text(
                             widget.projectTitle,
-                            style: getRegularStyle(
-                                fontSize: 32,
-                                color: ColorManager.instance.black),
+                            style: Theme.of(context).textTheme.headlineLarge,
                             textAlign: TextAlign.center,
                           ),
                           Text(
                             widget.projectDescription,
-                            style: getLightStyle(
-                                fontSize: 24,
-                                color: ColorManager.instance.black),
+                            style: Theme.of(context).textTheme.headlineSmall,
                             textAlign: TextAlign.center,
                           ),
                         ],

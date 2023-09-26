@@ -1,7 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:senaecelik/prescription/home/home_desktop.dart';
+import 'package:senaecelik/provider/app_provider.dart';
 import 'package:senaecelik/resources/color_manager.dart';
-import 'package:senaecelik/resources/styles_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/utils/static_util.dart';
 import 'dart:html' as html;
@@ -32,22 +34,25 @@ class HomeMobile extends StatelessWidget {
           SizedBox(
             height: AppSizeHeight.s12,
           ),
-          Text("Sena ÇELİK",
-              style: getMediumStyle(
-                  fontSize: 24, color: ColorManager.instance.black)),
+          Text(
+            "Sena ÇELİK",
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
           SizedBox(
             height: AppSizeHeight.s12,
           ),
           AnimatedTextKit(
             animatedTexts: [
-              TyperAnimatedText(' Flutter Developer',
-                  speed: const Duration(milliseconds: 50),
-                  textStyle: getMediumStyle(
-                      fontSize: 18, color: ColorManager.instance.black)),
-              TyperAnimatedText(' Mathematician',
-                  speed: const Duration(milliseconds: 50),
-                  textStyle: getMediumStyle(
-                      fontSize: 18, color: ColorManager.instance.black)),
+              TyperAnimatedText(
+                ' Flutter Developer',
+                speed: const Duration(milliseconds: 50),
+                textStyle: Theme.of(context).textTheme.titleLarge,
+              ),
+              TyperAnimatedText(
+                ' Mathematician',
+                speed: const Duration(milliseconds: 50),
+                textStyle: Theme.of(context).textTheme.titleLarge,
+              ),
             ],
             isRepeatingAnimation: true,
             repeatForever: true,
@@ -55,13 +60,19 @@ class HomeMobile extends StatelessWidget {
           SizedBox(
             height: AppSizeHeight.s12,
           ),
-          _buildMobileSocialLink()
+          _buildMobileSocialLink(context),
+          SizedBox(
+            height: AppSizeHeight.s12,
+          ),
+          ResumeButton(),
         ],
       ),
     );
   }
 
-  OverflowBar _buildMobileSocialLink() {
+  OverflowBar _buildMobileSocialLink(BuildContext context) {
+    final appProvider = Provider.of<AppProvider>(context);
+
     return OverflowBar(
       children: StaticUtils.socialIconURL
           .asMap()
@@ -72,7 +83,9 @@ class HomeMobile extends StatelessWidget {
               splashRadius: AppSizeHeight.s1,
               icon: Image.network(
                 e.value,
-                color: Colors.black,
+                color: appProvider.isDark
+                    ? ColorManager.instance.white
+                    : ColorManager.instance.black,
                 height: 28,
               ),
               iconSize: 32,

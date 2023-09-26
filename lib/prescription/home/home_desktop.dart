@@ -1,12 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:senaecelik/animation/entrance_fader.dart';
-import 'package:senaecelik/resources/color_manager.dart';
-import 'package:senaecelik/resources/styles_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
-import 'package:senaecelik/responsive/responsive.dart';
 import 'package:senaecelik/utils/static_util.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'dart:html' as html;
 
 class HomeDesktop extends StatelessWidget {
@@ -53,9 +49,10 @@ class HomeDesktop extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('WELCOME TO MY PORTFOLIO! ',
-                        style: getLightStyle(
-                            fontSize: 36, color: ColorManager.instance.black)),
+                    Text(
+                      'WELCOME TO MY PORTFOLIO! ',
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
                     EntranceFader(
                       offset: const Offset(0, 0),
                       delay: const Duration(seconds: 2),
@@ -70,13 +67,14 @@ class HomeDesktop extends StatelessWidget {
                 SizedBox(
                   height: AppSizeHeight.s32,
                 ),
-                Text("Sena",
-                    style: getRegularStyle(
-                        fontSize: 58, color: ColorManager.instance.black)),
-                Text("ÇELİK",
-                    style: getBoldStyle(
-                            fontSize: 72, color: ColorManager.instance.black)
-                        .copyWith(height: 0.8)),
+                Text(
+                  "Sena",
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
+                Text(
+                  "ÇELİK",
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
                 SizedBox(
                   height: AppSizeHeight.s40,
                 ),
@@ -92,16 +90,19 @@ class HomeDesktop extends StatelessWidget {
                       ),
                       AnimatedTextKit(
                         animatedTexts: [
-                          TyperAnimatedText(' Flutter Developer',
-                              speed: const Duration(milliseconds: 50),
-                              textStyle: getMediumStyle(
-                                  fontSize: 24,
-                                  color: ColorManager.instance.black)),
-                          TyperAnimatedText(' Mathematician',
-                              speed: const Duration(milliseconds: 50),
-                              textStyle: getMediumStyle(
-                                  fontSize: 24,
-                                  color: ColorManager.instance.black)),
+                          TyperAnimatedText(
+                            ' Flutter Developer',
+                            speed: const Duration(milliseconds: 50),
+                            textStyle:
+                                Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          TyperAnimatedText(
+                            ' Mathematician',
+                            speed: const Duration(milliseconds: 50),
+                            textStyle:
+                                Theme.of(context).textTheme.headlineSmall,
+                          ),
+
                           // TyperAnimatedText(' ',
                           //     speed: const Duration(milliseconds: 50),
                           //     textStyle: getMediumStyle(
@@ -117,6 +118,7 @@ class HomeDesktop extends StatelessWidget {
                 SizedBox(
                   height: AppSizeHeight.s24,
                 ),
+                ResumeButton(),
               ],
             ),
           ),
@@ -126,47 +128,20 @@ class HomeDesktop extends StatelessWidget {
   }
 }
 
-class SocialLinks extends StatelessWidget {
-  const SocialLinks({
-    Key? key,
-  }) : super(key: key);
+class ResumeButton extends StatelessWidget {
+  const ResumeButton({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          color: Colors.green.shade200,
-          width: 3,
-          height: AppSizeHeight.s240,
-        ),
-        Wrap(
-          spacing: 20,
-          direction: Axis.vertical,
-          children: StaticUtils.socialIconURL
-              .asMap()
-              .entries
-              .map(
-                (e) => IconButton(
-                  highlightColor: Colors.green.shade300,
-                  splashRadius: AppSizeHeight.s1,
-                  icon: Image.network(
-                    e.value,
-                    color: Colors.black,
-                    height: Responsive.isDesktop(context) ? 40 : 20,
-                  ),
-                  iconSize: 25,
-                  onPressed: () =>
-                      html.window.open(StaticUtils.socialLinks[e.key], ""),
-                  hoverColor: Colors.green.shade100,
-                ),
-              )
-              .toList(),
-        ),
-      ],
-    );
+    return OutlinedButton(
+        onPressed: () {
+          html.window.open(
+            StaticUtils.resume,
+            "pdf",
+          );
+        },
+        child: Text("RESUME"));
   }
 }
-
-void openURL(String url) => launchUrl(
-      Uri.parse(url),
-    );

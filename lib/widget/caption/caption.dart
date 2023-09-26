@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:senaecelik/resources/color_manager.dart';
-import 'package:senaecelik/resources/styles_manager.dart';
-import 'package:senaecelik/responsive/responsive.dart';
 
 class Caption extends StatelessWidget {
   const Caption({
-    super.key, required this.label,
+    super.key,
+    required this.label,
   });
 
   final String label;
@@ -18,20 +16,19 @@ class Caption extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: '# ',
-              style: getSemiBoldStyle(
-                  fontSize: Responsive.isDesktop(context) ? 32 : 24,
-                  color: Colors.green.shade200),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineLarge!
+                  .copyWith(color: Colors.green.shade200),
               children: <TextSpan>[
                 TextSpan(
                     text: label,
-                    style: getMediumStyle(
-                        fontSize: Responsive.isDesktop(context) ? 32 : 24,
-                        color: ColorManager.instance.black)),
+                    style: Theme.of(context).textTheme.headlineLarge),
               ],
             ),
           ),
         ),
-        Expanded(
+        const Expanded(
           child: Divider(
             height: 10,
             indent: 30,

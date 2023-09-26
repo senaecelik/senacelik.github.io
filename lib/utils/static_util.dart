@@ -1,3 +1,5 @@
+import 'package:url_launcher/url_launcher.dart';
+
 class StaticUtils {
   static String hi = "assets/images/hi.gif";
   static String github = "https://github.com/senaecelik";
@@ -18,6 +20,9 @@ class StaticUtils {
     "https://github.com/senaecelik",
     "https://medium.com/@senaecelik"
   ];
+  static void openURL(String url) => launchUrl(
+        Uri.parse(url),
+      );
 
   // services
   static const String uiux =

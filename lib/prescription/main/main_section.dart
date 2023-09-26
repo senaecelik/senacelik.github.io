@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:senaecelik/prescription/home/home_desktop.dart';
+import 'package:senaecelik/prescription/home/social_link.dart';
 import 'package:senaecelik/prescription/main/widget/mobile_drawer.dart';
 import 'package:senaecelik/prescription/main/widget/navbar_desktop.dart';
 import 'package:senaecelik/provider/scroll_provider.dart';
@@ -16,7 +16,9 @@ class MainSection extends StatelessWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: !Responsive.isDesktop(context) ? AppBar() : null,
+      appBar: !Responsive.isDesktop(context) ? AppBar(
+        
+      ) : null,
       drawer: !Responsive.isDesktop(context) ? const MobileDrawer() : null,
       body: SafeArea(
         child: Stack(
@@ -29,10 +31,12 @@ class MainSection extends StatelessWidget {
 
             // const ArrowOnTop(),
 
-            Responsive.isDesktop(context) ? NavbarDesktop() : SizedBox.shrink(),
             Responsive.isDesktop(context)
-                ? Positioned(left: 10, top: 0, child: SocialLinks())
-                : SizedBox.shrink()
+                ? const NavbarDesktop()
+                : const SizedBox.shrink(),
+            Responsive.isDesktop(context)
+                ? const Positioned(left: 10, top: 0, child: SocialLinks())
+                : const SizedBox.shrink()
           ],
         ),
       ),

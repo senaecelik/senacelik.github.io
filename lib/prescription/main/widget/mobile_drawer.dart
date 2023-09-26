@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:senaecelik/prescription/main/widget/dark_light_button.dart';
+import 'package:senaecelik/prescription/main/widget/hash_rich_text.dart';
 import 'package:senaecelik/provider/scroll_provider.dart';
-import 'package:senaecelik/resources/color_manager.dart';
-import 'package:senaecelik/resources/styles_manager.dart';
 import 'package:senaecelik/utils/navbar_util.dart';
 
 class MobileDrawer extends StatelessWidget {
@@ -17,34 +17,30 @@ class MobileDrawer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DrawerHeader(
-                child: Center(
-                    child: Text(
-              "Sena ÇELİK",
-              style: getRegularStyle(
-                  fontSize: 24, color: ColorManager.instance.black),
-            ))),
+            Stack(
+              children: [
+                DrawerHeader(
+                    child: Center(
+                  child: Text(
+                    "Sena ÇELİK",
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                )),
+                const Positioned(
+                  top: 10,
+                  right: 10,
+                  child: DarkLightButton(),
+                )
+              ],
+            ),
             ...NavBarUtils.names.asMap().entries.map(
                   (e) => ListTile(
-                    title: RichText(
-                      text: TextSpan(
-                        text: '# ',
-                        style: getSemiBoldStyle(
-                            fontSize: 18, color: Colors.green.shade200),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: e.value,
-                              style: getRegularStyle(
-                                  fontSize: 18,
-                                  color: ColorManager.instance.black)),
-                        ],
-                      ),
-                    ),
+                    title: HashRichText(label: e.value),
                     onTap: () {
                       scrollProvider.scrollMobile(e.key);
                     },
                   ),
-                )
+                ),
           ]),
     ]);
   }
