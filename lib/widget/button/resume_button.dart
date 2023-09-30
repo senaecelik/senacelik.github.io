@@ -1,9 +1,8 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
 
 import 'package:flutter/material.dart';
+import 'package:senaecelik/utils/social_utils.dart';
 import 'dart:html' as html;
-
-import 'package:senaecelik/utils/static_util.dart';
 
 class ResumeButton extends StatelessWidget {
   const ResumeButton({
@@ -15,7 +14,7 @@ class ResumeButton extends StatelessWidget {
     return OutlinedButton(
         onPressed: () {
           html.window.open(
-            StaticUtils.resume,
+            SocialUtils.resume,
             "pdf",
           );
         },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:senaecelik/data/model/static_user_model.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 
 class Footer extends StatelessWidget {
@@ -22,7 +23,7 @@ class Footer extends StatelessWidget {
                   width: AppSizeWidth.s2,
                 ),
                 Text(
-                  "Copyright 2023. Made by Sena ÇELİK",
+                  "Copyright 2023. Made by ${StaticUserModel.user!.name} ${StaticUserModel.user!.surname}",
                   style: Theme.of(context).textTheme.labelMedium,
                 )
               ],

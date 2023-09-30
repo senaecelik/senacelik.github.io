@@ -5,12 +5,12 @@ class TAppTheme {
   TAppTheme._();
   static ThemeData lightTheme = ThemeData(
       useMaterial3: true,
-      colorSchemeSeed: Colors.green,
+      colorSchemeSeed: Colors.blueGrey,
       brightness: Brightness.light,
       textTheme: TTextTheme.lightTextTheme);
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
-      colorSchemeSeed: Colors.green,
+      colorSchemeSeed: Colors.blueGrey,
       brightness: Brightness.dark,
       textTheme: TTextTheme.dartkTextTheme);
 }

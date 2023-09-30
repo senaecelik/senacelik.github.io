@@ -4,7 +4,7 @@ import 'package:senaecelik/provider/app_provider.dart';
 import 'package:senaecelik/resources/color_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/responsive/responsive.dart';
-import 'package:senaecelik/utils/static_util.dart';
+import 'package:senaecelik/utils/social_utils.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
@@ -17,14 +17,9 @@ class SocialLinks extends StatelessWidget {
     final appProvider = Provider.of<AppProvider>(context);
     return Column(
       children: [
-        // Container(
-        //   color: Theme.of(context).colorScheme.onBackground,
-        //   width: 3,
-        //   height: 200,
-        // ),
         OverflowBar(
           spacing: 20,
-          children: StaticUtils.socialIconURL
+          children: SocialUtils.socialIconURL
               .asMap()
               .entries
               .map(
@@ -41,7 +36,7 @@ class SocialLinks extends StatelessWidget {
                   ),
                   iconSize: 25,
                   onPressed: () =>
-                      html.window.open(StaticUtils.socialLinks[e.key], ""),
+                      html.window.open(SocialUtils.socialLinks[e.key], ""),
                   hoverColor: Theme.of(context).colorScheme.secondaryContainer,
                 ),
               )

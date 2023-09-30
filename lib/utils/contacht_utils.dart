@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:senaecelik/data/model/static_user_model.dart';
 
 class ContactUtils {
   static const List<IconData> contactIcon = [
@@ -6,13 +7,8 @@ class ContactUtils {
     Icons.mail,
   ];
 
-  static const List<String> titles = [
-    "Location",
-    "Email",
-  ];
-
-  static const List<String> details = [
-    "Ankara, Turkey",
-    "senaecelik@gmail.com",
+  static List<String> details = [
+    StaticUserModel.user!.adress,
+    StaticUserModel.user!.email,
   ];
 }

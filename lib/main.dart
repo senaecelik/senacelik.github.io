@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:senaecelik/main.reflectable.dart';
 import 'package:senaecelik/prescription/main/main_section.dart';
 import 'package:senaecelik/provider/app_provider.dart';
+import 'package:senaecelik/provider/user_info_cubit.dart';
 import 'package:senaecelik/provider/scroll_provider.dart';
 import 'package:senaecelik/resources/theme_manager.dart';
 
 void main() {
+  initializeReflectable();
   runApp(const MyApp());
 }
 
@@ -20,6 +24,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()),
         ChangeNotifierProvider(create: (_) => ScrollProvider()),
+        BlocProvider(create: (context) => UserInfoCubit()),
       ],
       child: Consumer<AppProvider>(
         builder: (context, value, _) => App(
