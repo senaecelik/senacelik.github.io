@@ -21,7 +21,7 @@ class MainSection extends StatefulWidget {
 class _MainSectionState extends State<MainSection> {
   @override
   void initState() {
-    context.read<UserInfoCubit>().getUser();
+    context.read<UserInfoCubit>().getUserInfo();
     super.initState();
   }
 
@@ -36,7 +36,7 @@ class _MainSectionState extends State<MainSection> {
           return Scaffold(
             body: Center(
               child: Container(
-                child: Lottie.asset(StaticUtils.loading),
+                child: Lottie.asset(StaticUtils.loading, height: 100),
               ),
             ),
           );
@@ -84,9 +84,22 @@ class _MainSectionState extends State<MainSection> {
             ),
           );
         } else if (state is ErrorState) {
-          return Text(state.message);
+          return Scaffold(
+              body: Center(
+                  child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                child: Lottie.asset(StaticUtils.error, height: 100),
+              ),
+              Text(
+                state.message,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ],
+          )));
         } else {
-          return Text("data");
+          return const Text("Bir sorun oluştu");
         }
       },
     );

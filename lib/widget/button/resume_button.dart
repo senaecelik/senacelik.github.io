@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:senaecelik/utils/social_utils.dart';
-import 'dart:html' as html;
+
+import 'package:senaecelik/utils/static_util.dart';
 
 class ResumeButton extends StatelessWidget {
   const ResumeButton({
@@ -13,9 +14,8 @@ class ResumeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
         onPressed: () {
-          html.window.open(
+          StaticUtils.openURL(
             SocialUtils.resume,
-            "pdf",
           );
         },
         child: const Text(

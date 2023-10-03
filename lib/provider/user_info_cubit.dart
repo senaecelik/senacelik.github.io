@@ -8,10 +8,10 @@ class UserInfoCubit extends Cubit<UserInfoState> {
   UserInfoCubit() : super(InitialState());
 
   final repository = UserRepository();
-  Future<void> getUser() async {
+  Future<void> getUserInfo() async {
     emit(LoadingState());
-    await Future.delayed(Duration(seconds: 4));
-    await repository.getUser().then((value) {
+    await Future.delayed(const Duration(seconds: 4));
+    await repository.getUserInfo().then((value) {
       if (value != null) {
         StaticUserModel.user = value.first;
         emit(LoadedState());

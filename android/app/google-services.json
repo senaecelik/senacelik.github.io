@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "504885625160",
+    "project_id": "myportfolio-49a35",
+    "storage_bucket": "myportfolio-49a35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504885625160:android:78f50504c22970ebdd337d",
+        "android_client_info": {
+          "package_name": "com.example.senaecelik"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANs4k72ViJuOXaVOCejk0zTTi0iy3ENVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

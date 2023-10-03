@@ -17,30 +17,22 @@ class ProjectDesktop extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const Caption(label: "Project"),
-          // const CustomSectionSubHeading(
-          //   text: "Here are few samples of my previous work :)\n\n",
-          // ),
-
-          Center(
-            child: SizedBox(
-              height: 400,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: StaticUserModel.user!.project.length,
-                itemBuilder: (context, index) {
-                  return ProjectCard(
-                    banner: StaticUserModel.user!.project[index].image,
-                    projectIcon: StaticUserModel.user!.project[index].image,
-                    projectLink: StaticUserModel.user!.project[index].link,
-                    projectTitle: StaticUserModel.user!.project[index].title,
-                    projectDescription:
-                        StaticUserModel.user!.project[index].description,
-                  );
-                },
-              ),
-            ),
+          Wrap(
+            children: [
+              ...StaticUserModel.user!.project
+                  .asMap()
+                  .entries
+                  .map((e) => ProjectCard(
+                        banner: StaticUserModel.user!.project[e.key].image,
+                        projectIcon: StaticUserModel.user!.project[e.key].image,
+                        projectLink: StaticUserModel.user!.project[e.key].link,
+                        projectTitle:
+                            StaticUserModel.user!.project[e.key].title,
+                        projectDescription:
+                            StaticUserModel.user!.project[e.key].description,
+                      )),
+            ],
           ),
-
           OutlinedButton(
             onPressed: () => StaticUtils.openURL(
               StaticUserModel.user!.socialLink.github,

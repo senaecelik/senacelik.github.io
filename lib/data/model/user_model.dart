@@ -1,8 +1,4 @@
-import 'package:senaecelik/data/model/base_result_model.dart';
-import 'package:senaecelik/data/model/reflector.dart';
-
-@reflector
-class UserModel extends BaseResultModel {
+class UserModel {
   String name;
   String surname;
   String image;
@@ -41,7 +37,6 @@ class UserModel extends BaseResultModel {
         resumeLink: json["resumeLink"],
       );
 
-  @override
   Map<String, dynamic> toJson() => {
         "name": name,
         "surname": surname,

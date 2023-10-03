@@ -5,8 +5,8 @@ import 'package:senaecelik/resources/color_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/responsive/responsive.dart';
 import 'package:senaecelik/utils/social_utils.dart';
+import 'package:senaecelik/utils/static_util.dart';
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
 
 class SocialLinks extends StatelessWidget {
   const SocialLinks({
@@ -36,7 +36,7 @@ class SocialLinks extends StatelessWidget {
                   ),
                   iconSize: 25,
                   onPressed: () =>
-                      html.window.open(SocialUtils.socialLinks[e.key], ""),
+                      StaticUtils.openURL(SocialUtils.socialLinks[e.key]),
                   hoverColor: Theme.of(context).colorScheme.secondaryContainer,
                 ),
               )
