@@ -37,7 +37,10 @@ class _MainSectionState extends State<MainSection> {
           return Scaffold(
             body: Center(
               child: Container(
-                child: Lottie.asset(StaticUtils.loading, height: 100),
+                child: Lottie.asset(
+                  StaticUtils.loading,
+                  height: 100,
+                ),
               ),
             ),
           );
@@ -140,7 +143,7 @@ class _MainSectionState extends State<MainSection> {
                     children: [
                       Container(
                         color: Theme.of(context).colorScheme.onBackground,
-                        width: 2,
+                        width: 1,
                         height: 170,
                       ),
                       const DarkLightButton(),

@@ -9,9 +9,12 @@ import 'package:senaecelik/provider/app_provider.dart';
 import 'package:senaecelik/provider/user_info_cubit.dart';
 import 'package:senaecelik/provider/scroll_provider.dart';
 import 'package:senaecelik/resources/theme_manager.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setPathUrlStrategy();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -52,8 +55,14 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  void initAppTheme() {
+    final appProviders = AppProvider.state(context);
+    appProviders.init();
+  }
+
   @override
   void initState() {
+    initAppTheme();
     super.initState();
   }
 

@@ -10,7 +10,7 @@ class ScrollProvider extends ChangeNotifier {
     double offset = index == 1
         ? 650
         : index == 2
-            ? 650
+            ? 620
             : index == 3
                 ? 650
                 : 245;

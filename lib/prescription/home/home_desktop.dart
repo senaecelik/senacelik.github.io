@@ -6,6 +6,7 @@ import 'package:senaecelik/animation/entrance_fader.dart';
 import 'package:senaecelik/data/model/static_user_model.dart';
 import 'package:senaecelik/resources/font_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
+import 'package:senaecelik/responsive/responsive.dart';
 import 'package:senaecelik/utils/static_util.dart';
 import 'package:senaecelik/widget/button/social_link.dart';
 
@@ -17,7 +18,9 @@ class HomeDesktop extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 1.000,
+      height: Responsive.isDesktop(context)
+          ? size.height * 1.000
+          : size.height * 1.400,
       padding: EdgeInsets.all(AppPadding.p100),
       child: Stack(
         children: [

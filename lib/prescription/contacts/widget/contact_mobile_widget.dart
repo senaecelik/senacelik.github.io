@@ -9,6 +9,7 @@ class ContactMobileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OverflowBar(
+        spacing: 10,
         children: ContactUtils.contactIcon
             .asMap()
             .entries
