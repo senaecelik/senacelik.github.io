@@ -64,13 +64,13 @@ class _MainSectionState extends State<MainSection> {
                               trailing: const DarkLightButton(),
                               destinations: const <NavigationRailDestination>[
                                 NavigationRailDestination(
-                                  icon: Icon(Icons.home_outlined),
-                                  selectedIcon: Icon(Icons.home),
+                                  icon: Icon(LineIcons.home),
+                                  selectedIcon: Icon(LineIcons.home),
                                   label: Text('Home'),
                                 ),
                                 NavigationRailDestination(
-                                  icon: Icon(Icons.person_outlined),
-                                  selectedIcon: Icon(Icons.person),
+                                  icon: Icon(LineIcons.user),
+                                  selectedIcon: Icon(LineIcons.user),
                                   label: Text('About'),
                                 ),
                                 NavigationRailDestination(
@@ -79,9 +79,8 @@ class _MainSectionState extends State<MainSection> {
                                   label: Text('Project'),
                                 ),
                                 NavigationRailDestination(
-                                  icon: Icon(Icons.contact_page_outlined),
-                                  selectedIcon:
-                                      Icon(Icons.contact_page_rounded),
+                                  icon: Icon(LineIcons.comment),
+                                  selectedIcon: Icon(LineIcons.comment),
                                   label: Text('Contact'),
                                 ),
                               ],
@@ -134,7 +133,9 @@ class _MainSectionState extends State<MainSection> {
 
           // const ArrowOnTop(),
 
-          Responsive.isDesktop(context) ? const NavbarDesktop() : const SizedBox(),
+          Responsive.isDesktop(context)
+              ? const NavbarDesktop()
+              : const SizedBox(),
           Responsive.isDesktop(context)
               ? Positioned(
                   right: 30,

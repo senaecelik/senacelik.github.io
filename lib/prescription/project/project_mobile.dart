@@ -43,19 +43,20 @@ class ProjectMobile extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: AppPadding.p12),
                     child: Text(
-                      StaticUserModel.user!.project[index].description,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(fontWeight: FontWeightManager.light),
-                      overflow: TextOverflow.fade,
+                      truncateDescription(
+                          StaticUserModel.user!.project[index].description),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontWeight: FontWeightManager.light,
+                          ),
                     ),
                   )
                 ],
               ));
             },
             options: CarouselOptions(
-                autoPlay: true, enlargeCenterPage: true, aspectRatio: 5 / 3),
+              autoPlay: true,
+              enlargeCenterPage: true,
+            ),
           ),
           SizedBox(
             height: AppSizeHeight.s12,
@@ -64,5 +65,13 @@ class ProjectMobile extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String truncateDescription(String description) {
+    final int maxDescriptionLength =
+        60; // Set the maximum length for the description
+    return (description.length <= maxDescriptionLength)
+        ? description
+        : '${description.substring(0, maxDescriptionLength)}...';
   }
 }

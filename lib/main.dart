@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -70,6 +71,14 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       child: MaterialApp(
+        scrollBehavior: MaterialScrollBehavior().copyWith(
+          dragDevices: {
+            PointerDeviceKind.mouse,
+            PointerDeviceKind.touch,
+            PointerDeviceKind.stylus,
+            PointerDeviceKind.unknown
+          },
+        ),
         debugShowCheckedModeBanner: false,
         title: 'Sena ÇELİK',
         theme: TAppTheme.lightTheme,
