@@ -3,12 +3,12 @@ import 'package:senaecelik/data/model/static_user_model.dart';
 
 class ContactUtils {
   static const List<IconData> contactIcon = [
-    Icons.home,
     Icons.mail,
+    Icons.location_on_outlined,
   ];
 
   static List<String> details = [
-    StaticUserModel.user!.adress,
     StaticUserModel.user!.email,
+    StaticUserModel.user!.adress,
   ];
 }

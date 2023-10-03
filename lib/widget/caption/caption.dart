@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:senaecelik/responsive/responsive.dart';
 
 class Caption extends StatelessWidget {
   const Caption({
@@ -11,7 +12,9 @@ class Caption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: !Responsive.isDesktop(context)
+          ? MainAxisAlignment.start
+          : MainAxisAlignment.center,
       children: [
         RichText(
           text: TextSpan(

@@ -5,6 +5,7 @@ class ScrollProvider extends ChangeNotifier {
 
   ScrollController get controller => scrollController;
 
+  int gloabalIndex = 0;
   scroll(int index) {
     double offset = index == 1
         ? 650
@@ -21,17 +22,23 @@ class ScrollProvider extends ChangeNotifier {
   }
 
   scrollMobile(int index) {
+    gloabalIndex = index;
     double offset = index == 1
-        ? 290
+        ? 600
         : index == 2
-            ? 450
+            ? 710
             : index == 3
-                ? 300
-                : 310;
+                ? 720
+                : 900;
     controller.animateTo(
       offset * index.toDouble(),
       duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );
+  }
+
+  void change(int index) {
+    gloabalIndex = index;
+    notifyListeners();
   }
 }

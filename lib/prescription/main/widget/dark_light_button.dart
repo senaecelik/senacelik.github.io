@@ -11,10 +11,11 @@ class DarkLightButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);
 
-    return IconButton(
+    return IconButton.outlined(
         style: IconButton.styleFrom(
-            backgroundColor: appProvider.isDark ? Colors.white : Colors.black),
-        color: appProvider.isDark ? Colors.black : Colors.amber,
+            backgroundColor:
+                appProvider.isDark ? Colors.transparent : Colors.white),
+        color: appProvider.isDark ? Colors.white : Colors.amber,
         onPressed: () {
           appProvider.setTheme(
             appProvider.isDark ? ThemeMode.light : ThemeMode.dark,

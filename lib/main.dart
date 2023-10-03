@@ -11,6 +11,7 @@ import 'package:senaecelik/provider/scroll_provider.dart';
 import 'package:senaecelik/resources/theme_manager.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

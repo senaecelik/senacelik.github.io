@@ -32,7 +32,7 @@ class SocialLinks extends StatelessWidget {
                     color: appProvider.isDark
                         ? ColorManager.instance.white
                         : ColorManager.instance.black,
-                    height: Responsive.isDesktop(context) ? 40 : 20,
+                    height: Responsive.isDesktop(context) ? 40 : 30,
                   ),
                   iconSize: 25,
                   onPressed: () =>

@@ -3,6 +3,7 @@ import 'package:senaecelik/data/model/static_user_model.dart';
 import 'package:senaecelik/prescription/project/project_card.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/utils/static_util.dart';
+import 'package:senaecelik/widget/button/see_more_button.dart';
 import 'package:senaecelik/widget/caption/caption.dart';
 
 class ProjectDesktop extends StatelessWidget {
@@ -18,6 +19,7 @@ class ProjectDesktop extends StatelessWidget {
         children: [
           const Caption(label: "Project"),
           Wrap(
+            alignment: WrapAlignment.center,
             children: [
               ...StaticUserModel.user!.project
                   .asMap()
@@ -33,16 +35,10 @@ class ProjectDesktop extends StatelessWidget {
                       )),
             ],
           ),
-          OutlinedButton(
-            onPressed: () => StaticUtils.openURL(
-              StaticUserModel.user!.socialLink.github,
-            ),
-            child: const Text(
-              'See More',
-            ),
-          )
+          SeeMoreButton()
         ],
       ),
     );
   }
 }
+

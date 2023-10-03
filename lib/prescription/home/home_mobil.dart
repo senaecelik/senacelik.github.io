@@ -15,10 +15,9 @@ class HomeMobile extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.500,
-      padding: EdgeInsets.all(AppPadding.p20),
+      height: size.height * 1.000,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
