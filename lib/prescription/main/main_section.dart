@@ -61,7 +61,7 @@ class _MainSectionState extends State<MainSection> {
                               },
                               labelType: NavigationRailLabelType.all,
                               elevation: AppSizeHeight.s1,
-                              trailing: DarkLightButton(),
+                              trailing: const DarkLightButton(),
                               destinations: const <NavigationRailDestination>[
                                 NavigationRailDestination(
                                   icon: Icon(Icons.home_outlined),
@@ -88,7 +88,7 @@ class _MainSectionState extends State<MainSection> {
                             );
                           },
                         ),
-                        VerticalDivider(
+                        const VerticalDivider(
                           thickness: 1,
                           width: 1,
                         ),
@@ -134,7 +134,7 @@ class _MainSectionState extends State<MainSection> {
 
           // const ArrowOnTop(),
 
-          Responsive.isDesktop(context) ? const NavbarDesktop() : SizedBox(),
+          Responsive.isDesktop(context) ? const NavbarDesktop() : const SizedBox(),
           Responsive.isDesktop(context)
               ? Positioned(
                   right: 30,

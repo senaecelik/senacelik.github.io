@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:senaecelik/data/model/static_user_model.dart';
 import 'package:senaecelik/prescription/project/project_card.dart';
 import 'package:senaecelik/resources/values_manager.dart';
-import 'package:senaecelik/utils/static_util.dart';
 import 'package:senaecelik/widget/button/see_more_button.dart';
 import 'package:senaecelik/widget/caption/caption.dart';
 
@@ -35,7 +34,7 @@ class ProjectDesktop extends StatelessWidget {
                       )),
             ],
           ),
-          SeeMoreButton()
+          const SeeMoreButton()
         ],
       ),
     );

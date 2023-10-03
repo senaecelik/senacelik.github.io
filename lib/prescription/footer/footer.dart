@@ -13,7 +13,7 @@ class Footer extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.copyright_outlined),
+            const Icon(Icons.copyright_outlined),
             Text(
               " Copyright 2023. Made by ${StaticUserModel.user!.name} ${StaticUserModel.user!.surname}",
               style: Theme.of(context).textTheme.bodyMedium,

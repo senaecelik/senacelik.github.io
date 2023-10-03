@@ -10,15 +10,15 @@ class AboutMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
+    return SizedBox(
       height: size.height * 1.000,
       child: Column(
         children: [
-          Caption(label: "About"),
+          const Caption(label: "About"),
           SizedBox(
             height: AppSizeHeight.s12,
           ),
-          AboutText()
+          const AboutText()
         ],
       ),
     );

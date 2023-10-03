@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:senaecelik/prescription/contacts/widget/contact_desktop_widget.dart';
 import 'package:senaecelik/prescription/contacts/widget/contact_mobile_widget.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/widget/caption/caption.dart';
@@ -11,15 +10,15 @@ class ContactMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
+    return SizedBox(
       height: size.height * 0.550,
       child: Column(
         children: [
-          Caption(label: "Contact"),
+          const Caption(label: "Contact"),
           SizedBox(
             height: AppSizeHeight.s12,
           ),
-          ContactMobileWidget()
+          const ContactMobileWidget()
         ],
       ),
     );

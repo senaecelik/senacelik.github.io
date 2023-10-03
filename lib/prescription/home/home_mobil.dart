@@ -14,7 +14,7 @@ class HomeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
+    return SizedBox(
       height: size.height * 1.000,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

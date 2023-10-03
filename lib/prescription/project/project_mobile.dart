@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:senaecelik/data/model/static_user_model.dart';
-import 'package:senaecelik/prescription/project/project_card.dart';
 import 'package:senaecelik/resources/font_manager.dart';
 import 'package:senaecelik/resources/values_manager.dart';
 import 'package:senaecelik/utils/static_util.dart';
@@ -15,11 +14,11 @@ class ProjectMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
+    return SizedBox(
       height: size.height * 0.600,
       child: Column(
         children: [
-          Caption(label: "Project"),
+          const Caption(label: "Project"),
           SizedBox(
             height: AppSizeHeight.s12,
           ),
@@ -61,7 +60,7 @@ class ProjectMobile extends StatelessWidget {
           SizedBox(
             height: AppSizeHeight.s12,
           ),
-          SeeMoreButton(),
+          const SeeMoreButton(),
         ],
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:senaecelik/prescription/contacts/widget/contact_desktop_widget.dart';
 import 'package:senaecelik/resources/values_manager.dart';
-import 'package:senaecelik/utils/contacht_utils.dart';
 import 'package:senaecelik/widget/caption/caption.dart';
 
 class ContactDesktop extends StatelessWidget {
@@ -15,7 +14,7 @@ class ContactDesktop extends StatelessWidget {
         SizedBox(
           height: AppSizeHeight.s40,
         ),
-        ContactWidget(),
+        const ContactWidget(),
       ],
     );
   }
