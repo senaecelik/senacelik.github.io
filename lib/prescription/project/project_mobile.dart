@@ -41,7 +41,6 @@ class ProjectMobile extends StatelessWidget {
                           .copyWith(fontWeight: FontWeightManager.medium),
                     ),
                   ),
-                  Divider(),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: AppPadding.p12),
                     child: Text(
