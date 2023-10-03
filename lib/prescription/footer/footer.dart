@@ -8,14 +8,19 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: AppMargin.m12),
-        child: ListTile(
-          dense: true,
-          leading: Icon(Icons.copyright_outlined),
-          title: Text(
-            "Copyright 2023. Made by ${StaticUserModel.user!.name} ${StaticUserModel.user!.surname}",
-            style: Theme.of(context).textTheme.labelMedium,
-          ),
-        ));
+      margin: EdgeInsets.symmetric(vertical: AppMargin.m30),
+      child: Center(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.copyright_outlined),
+            Text(
+              " Copyright 2023. Made by ${StaticUserModel.user!.name} ${StaticUserModel.user!.surname}",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
